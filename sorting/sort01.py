@@ -1,20 +1,11 @@
 #Bubble Sort
 x = [1, 3, 2, 5, 4]
 
-def qsort(x):
-    if len(x) <= 1:
-        return x
+n = len(x)
 
-    pivot = x[-1]
-    less = []
-    greater = []
+for i in range(n):
+    for j in range(n - i - 1):
+        if x[j] > x[j + 1]:
+            x[j], x[j + 1] = x[j + 1], x[j]
 
-    for i in x[:-1]:
-        if i <= pivot:
-            less.append(i)
-        else:
-            greater.append(i)
-
-    return qsort(less) + [pivot] + qsort(greater)
-
-print(qsort(x))
+print(x)
